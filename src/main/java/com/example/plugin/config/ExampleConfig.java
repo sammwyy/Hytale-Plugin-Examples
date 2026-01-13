@@ -4,21 +4,22 @@ import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
 import com.hypixel.hytale.codec.builder.BuilderCodec;
 
+// Saved under: plugins/com.example_ExamplePlugin/ExamplePlugin.example.json
 public class ExampleConfig {
     // Codec for serializing and deserializing the ExampleConfig class.
     public static final BuilderCodec<ExampleConfig> CODEC = BuilderCodec
             .builder(ExampleConfig.class, ExampleConfig::new)
             .append(new KeyedCodec<String>("Text", Codec.STRING),
-                    (oldConfig, newValue, extraInfo) -> oldConfig.text = newValue, // Setter
-                    (oldConfig, extraInfo) -> oldConfig.text)// Getter
+                    (config, value, exinfotraInfo) -> config.text = value, // Setter
+                    (config, info) -> config.text)// Getter
             .add()
             .append(new KeyedCodec<Boolean>("Bool", Codec.BOOLEAN),
-                    (oldConfig, newValue, extraInfo) -> oldConfig.bool = newValue, // Setter
-                    (oldConfig, extraInfo) -> oldConfig.bool) // Getter
+                    (config, value, info) -> config.bool = value, // Setter
+                    (config, info) -> config.bool) // Getter
             .add()
             .append(new KeyedCodec<Integer>("Number", Codec.INTEGER),
-                    (oldConfig, newValue, extraInfo) -> oldConfig.number = newValue, // Setter
-                    (oldConfig, extraInfo) -> oldConfig.number) // Getter
+                    (config, value, info) -> config.number = value, // Setter
+                    (config, info) -> config.number) // Getter
             .add()
             .build();
 
