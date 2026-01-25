@@ -1,0 +1,12 @@
+metadata.format.version = "1.1"
+
+[versions]
+
+# Platforms
+junitBom = "5.10.0"
+junitJupiter = "5.10.0"
+
+[libraries]
+
+junitBom = { group = "org.junit", name = "junit-bom", version.ref = "junitBom" }
+junitJupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
