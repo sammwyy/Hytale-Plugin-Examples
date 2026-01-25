@@ -1,0 +1,9 @@
+# Build logic
+gradlew text eol=lf
+gradlew.bat text eol=crlf
+*.kts text eol=lf
+*.toml text eol=lf
+
+# The remainder of the project
+*.java text eol=lf
+*.json text eol=lf
